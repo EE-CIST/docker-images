@@ -14,11 +14,13 @@ ENV RENV_PATHS_LIBRARY renv/library
 RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb
 RUN gdebi --non-interactive quarto-linux-amd64.deb
 
+WORKDIR /project
+
+COPY ./utils/ ./utils
+
 #https://cran.r-project.org/web/packages/renv/vignettes/docker.html
 RUN install2.r --error remotes
 RUN Rscript -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
-
-WORKDIR /project
-COPY /utils/renv.lock .
+RUN Rscript "./utils/generate-renvlock.r"
 
 RUN R -e 'options(warn = 2); renv::restore()'
