@@ -12,8 +12,8 @@ ARG QUARTO_VERSION="1.2.313"
 ENV RENV_VERSION 0.16.0
 ENV RENV_PATHS_LIBRARY renv/library
 
-RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${TARGETARCH}.deb
-RUN gdebi --non-interactive quarto-linux-amd64.deb
+RUN curl -o quarto-linux-${TARGETARCH}.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${TARGETARCH}.deb
+RUN gdebi --non-interactive quarto-linux-${TARGETARCH}.deb
 
 WORKDIR /project
 
