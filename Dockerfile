@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y curl gdebi-core
 libhdf4-alt-dev libhdf5-dev libjq-dev libpq-dev libproj-dev libprotobuf-dev libnetcdf-dev \
 libsqlite3-dev libssl-dev libudunits2-dev netcdf-bin protobuf-compiler sqlite3 tk-dev unixodbc-dev libcurl4-openssl-dev libudunits2-dev git pandoc 
 
-ARG QUARTO_VERSION="1.2.313"
+#ARG QUARTO_VERSION="1.2.313"
+#Prerelease version needed for ARM Support
+ARG QUARTO_VERSION="1.3.217"
 
 ENV RENV_VERSION 0.16.0
 ENV RENV_PATHS_LIBRARY renv/library
