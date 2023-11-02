@@ -4,7 +4,7 @@ MAINTAINER Sebastien Rey-Coyrehourcq <sebastien.rey-coyrehourcq@univ-rouen.fr>
 ARG TARGETARCH
 
 RUN apt-get update && apt-get install --no-install-recommends -y curl gdebi-core gdal-bin lbzip2 libfftw3-dev libgdal-dev libgeos-dev libgsl0-dev libgl1-mesa-dev libglu1-mesa-dev \
-libhdf4-alt-dev libhdf5-dev libjq-dev libpq-dev libproj-dev libprotobuf-dev libnetcdf-dev libv8-dev libnode-dev \
+libhdf4-alt-dev libhdf5-dev libjq-dev libpq-dev libproj-dev libprotobuf-dev libnetcdf-dev libv8-dev libnode-dev libharfbuzz-dev libfribidi-dev libtiff5-dev \
 libsqlite3-dev libssl-dev libudunits2-dev netcdf-bin protobuf-compiler sqlite3 tk-dev unixodbc-dev libcurl4-openssl-dev libudunits2-dev git pandoc 
 
 #ARG QUARTO_VERSION="1.2.313"
